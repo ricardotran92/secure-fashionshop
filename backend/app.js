@@ -50,7 +50,7 @@ if(process.env.NODE_ENV === "PRODUCTION"){
 
 app.use(errorsMiddleware);
 
-// app instance đăng ký routes và listen ở port 4000.
+// app instance đăng ký routes và listen ở port 4040.
 const server = app.listen(process.env.PORT, () => {
   console.log(
     `Server đang chạy ở port ${process.env.PORT} ở chế độ ${process.env.NODE_ENV}`
