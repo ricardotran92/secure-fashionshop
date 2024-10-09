@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Vui lòng nhập mật khẩu của bạn"],
       minLength: [6, "Mật khẩu của bạn phải ít nhất 6 ký tự."],
-      select: false,
+      // select: false, // Không hiển thị mật khẩu trong phản hồi
     },
 
     email: {

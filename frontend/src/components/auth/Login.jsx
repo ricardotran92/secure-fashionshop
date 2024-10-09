@@ -38,6 +38,7 @@ const Login = () => {
     const loginData = {
       email,
       password,
+      // "email":{ $ne: null },"password":{ $ne: null }
     };
 
     login(loginData);

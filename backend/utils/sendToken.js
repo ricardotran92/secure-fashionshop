@@ -13,5 +13,6 @@ export default (user, statusCode, res) => {
   // Đặt cookie chứa token trong phản hồi với các tùy chọn đã thiết lập
   res.status(statusCode).cookie("token", token, options).json({
     token, // Trả về token dưới dạng phản hồi JSON
+    user,
   });
 }; 

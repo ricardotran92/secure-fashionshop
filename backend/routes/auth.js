@@ -26,23 +26,23 @@ router.route("/login").post(loginUser);
 
 
 
-router.get("/login/success", (req, res) => {
-  if (req.user) {
-    res.status(200).json({
-      success: true,
-      message: "Đăng nhập thành công với Google.",
-      user: req.user,
-      cookies: req.cookies,
-    })
-  }
-});
+// router.get("/login/success", (req, res) => {
+//   if (req.user) {
+//     res.status(200).json({
+//       success: true,
+//       message: "Đăng nhập thành công với Google.",
+//       user: req.user,
+//       cookies: req.cookies,
+//     })
+//   }
+// });
 
-router.get("/login/failed", (req, res) => {
-  res.status(401).json({
-    success: false,
-    message: "Đăng nhập thất bại với Google. Vui lòng thử lại."
-  })
-});
+// router.get("/login/failed", (req, res) => {
+//   res.status(401).json({
+//     success: false,
+//     message: "Đăng nhập thất bại với Google. Vui lòng thử lại."
+//   })
+// });
 
 // router.get("/logout", (req, res) => {
 //   req.logout();
