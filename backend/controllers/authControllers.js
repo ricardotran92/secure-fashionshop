@@ -38,8 +38,8 @@ export const loginUser = catchAsyncErrors(async (req, res, next) => {
   }
 
     // Tìm kiếm người dùng trong cơ sở dữ liệu bằng email
-  // const user = await User.findOne({email}).select("+password");
-  const user = await User.findOne({email});
+  const user = await User.findOne({email}).select("+password");
+  // const user = await User.findOne({email});
     // Kiểm tra xem người dùng có tồn tại không
   if(!user){
     return next(new ErrorHandler("email hoặc mật khẩu không đúng", 401));
