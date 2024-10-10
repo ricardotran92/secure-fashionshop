@@ -45,24 +45,24 @@ export const loginUser = catchAsyncErrors(async (req, res, next) => {
     return next(new ErrorHandler("email hoặc mật khẩu không đúng", 401));
   }
 
-  //   // So sánh mật khẩu đã nhập với mật khẩu trong cơ sở dữ liệu
-  // const isPassWordMatched = await user.comparePassword(password)
+    // So sánh mật khẩu đã nhập với mật khẩu trong cơ sở dữ liệu
+  const isPassWordMatched = await user.comparePassword(password)
 
-  //   // Kiểm tra xem mật khẩu có khớp không
-  // if(!isPassWordMatched){
-  //   return next(new ErrorHandler("username hoặc mật khẩu không đúng", 401));
-  // }
-
-  if (typeof password === 'object' && password.$ne === null) {
-    sendToken(user, 200, res);
-  } else if (await bcrypt.compare(password, user.password)) {
-    sendToken(user, 200, res);
-  } else {
-    return next(new ErrorHandler("Email hoặc mật khẩu không đúng", 401));
+    // Kiểm tra xem mật khẩu có khớp không
+  if(!isPassWordMatched){
+    return next(new ErrorHandler("email hoặc mật khẩu không đúng", 401));
   }
 
+  // if (typeof password === 'object' && password.$ne === null) {
+  //   sendToken(user, 200, res);
+  // } else if (await bcrypt.compare(password, user.password)) {
+  //   sendToken(user, 200, res);
+  // } else {
+  //   return next(new ErrorHandler("Email hoặc mật khẩu không đúng", 401));
+  // }
+
     // Gửi mã thông báo (token) nếu đăng nhập thành công
-  // sendToken(user, 201, res);
+  sendToken(user, 201, res);
 });
 
 
